@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <header class="header">
+            <div class="inner-header">
+                <div class="logo"></div>
+                <div class="menu_item"></div>
+                <div class="lft_btn"></div>
+            </div>
+        </header>
+        <div class="banner"></div>
+
+        <script>
+            var header = document.getElementsByClassName("header")[0];
+            header.style.padding = "10px 50px";
+
+            var head = document.getElementsByTagName("head")[0];  
+            var styletag = document.createElement("style");  
+            head.appendChild(styletag);
+
+            styletag.innerHTML = `
+                * {
+                    padding: 0;
+                    margin: 0;
+                }
+            `;
+
+            var logo = document.getElementsByClassName("logo")[0];  
+            var logoimg = document.createElement("img");  
+            logoimg.src = "https://www.chainwizz.com/wp-content/uploads/2024/05/chainwizzlogo.png";  
+            logoimg.alt = "Logo";  
+            logoimg.style.width = "200px";  
+            logoimg.style.height = "90px";  
+
+            var ancher = document.createElement("a");  
+            ancher.href = "https://yourwebsite.com";  
+            ancher.appendChild(logoimg);  
+
+            logo.appendChild(ancher);  
+
+            // Array of menu items with name and link
+            var item = [
+                {name: "Home", link: "https://yourwebsite.com/home"},
+                {name: "About", link: "https://yourwebsite.com/about"},
+                {name: "Services", link: "https://yourwebsite.com/services"},
+                {name: "Contact", link: "https://yourwebsite.com/contact"}
+            ];
+
+            var menu = document.getElementsByClassName("menu_item")[0]; 
+
+            // Loop through each item in the array
+            for (var i = 0; i < item.length; i++) {
+                var menu_item = document.createElement("a");  
+                menu_item.href = item[i].link;  
+                menu_item.textContent = item[i].name;  
+
+                // Apply some styling
+                menu_item.style.color = "black";
+                menu_item.style.textDecoration = "none";
+                menu_item.style.padding = "10px";
+                menu_item.style.margin = "0px";
+                menu_item.style.display = "inline-block";
+
+                // Append the newly created <a> element to the menu container
+                menu.appendChild(menu_item);
+            }
+
+            // Log the menu to see the updated structure
+            console.log(menu);
+
+
+
+
+            var flx = document.getElementsByClassName("inner-header")[0]; // Select the first element with class "inner-header"
+            flx.style.display = "flex"; // Set the display property to "flex"
+            flx.style.justifyContent = "space-between"; // Set justify-content to space-between
+            flx.style.alignItems = "center";
+
+        </script>
+    </body>
+</html>
