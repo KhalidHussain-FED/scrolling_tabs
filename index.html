@@ -3,84 +3,311 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Scroll to Section</title>
+        <style>
+        /* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+    background-color: black;
+}
+
+h1#content-title {
+    font-size: 70px;
+}
+
+h2#content-subtitle {
+    font-size: 36px;
+    font-family: Lato, sans-serif;
+    font-weight: 700;
+    line-height: 30px;
+}
+
+p#content-para {
+    font-size: 18px;
+    line-height: 30px;
+    font-family: Poppins, sans-serif;
+    width: 100%;
+    max-width: 90%;
+    margin: 13px auto;
+}
+
+section::before {
+    content: "";
+    background-image: url('https://i.ibb.co/7QfDH2D/bot-image-auto-mate-ai.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 200px;
+    height: 200px;
+}
+
+.main_content {
+    width: 100%;
+    max-width: 70%;
+}
+
+.main_section {
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #000;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+li {
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    flex-basis: calc(33.3333% - 20px); /* Adjusted for gap */
+    text-align: center;
+}
+
+li:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+section {
+    height: 100vh;
+    padding: 20px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+}
+
+section p#content-para {
+    margin-left: 0px;
+}
+
+section.active {
+    display: flex;
+}
+
+#section1, #section2, #section3, #section4, #section5, #section6 {
+    background-image: url('https://i.ibb.co/yYyVsNW/slides.png');
+    background-size: cover;
+    background-position: center;
+}
+
+section h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+section p {
+    font-size: 20px;
+    max-width: 800px;
+    line-height: 1.5;
+}
+
+section .main_content {
+    text-align: start;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 768px) {
+    h1#content-title {
+        font-size: 48px;
+    }
+
+    h2#content-subtitle {
+        font-size: 28px;
+        margin-bottom: 4rem;
+    }
+
+    p#content-para {
+        font-size: 16px;
+    }
+
+    .main_content {
+        max-width: 90%;
+    }
+
+    section h1 {
+        font-size: 28px;
+    }
+
+    section p {
+        font-size: 18px;
+    }
+
+    section::before {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    h1#content-title {
+        font-size: 36px;
+    }
+
+    h2#content-subtitle {
+        font-size: 24px;
+    }
+
+    p#content-para {
+        font-size: 14px;
+    }
+
+    section h1 {
+        font-size: 24px;
+    }
+
+    section p {
+        font-size: 16px;
+    }
+
+    section::before {
+        width: 100px;
+        height: 100px;
+    }
+
+    ul {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    li {
+        flex-basis: calc(33.3333% - 20px); /* 3 items per row */
+    }
+}
+
+    </style>
     </head>
     <body>
-        <header class="header">
-            <div class="inner-header">
-                <div class="logo"></div>
-                <div class="menu_item"></div>
-                <div class="lft_btn"></div>
+
+        <div class="main_section">
+            <div class="main_content">
+                <h1 id="content-title">Introducing Salon Auto.mate: Your Digital
+                    Solution</h1>
+                <p id="content-para">Salon Auto.mate is designed to address
+                    challenges by integrating advanced AI technology into your
+                    salon operations. This powerful tool transforms your
+                    approach to salon management through features that enhance
+                    efficiency, improve client satisfaction, and optimize staff
+                    performance.</p>
+                <h2 id="content-subtitle">Tailored Bots for the Hairdressing
+                    Industry</h2>
             </div>
-        </header>
-        <div class="banner"></div>
+
+            <ul>
+                <li id="item1">1. Onboarding Bot</li>
+                <li id="item2">2. Education Support Bot</li>
+                <li id="item3">3. Customer Service Bot</li>
+                <li id="item4">4. Retailer Bot Assistant</li>
+                <li id="item5">5. Booking Bot</li>
+                <li id="item6">6. Custom</li>
+            </ul>
+        </div>
+
+        <section id="section1">
+            <div class="main_content">
+                <h1 id="content-title">Introducing Salon Auto.mate: Your Digital
+                    Solution</h1>
+                <p id="content-para">Salon Auto.mate is designed to address
+                    challenges by integrating advanced AI technology into your
+                    salon operations. This powerful tool transforms your
+                    approach to salon management through features that enhance
+                    efficiency, improve client satisfaction, and optimize staff
+                    performance.</p>
+                <h2 id="content-subtitle">Tailored Bots for the Hairdressing
+                    Industry</h2>
+            </div>
+        </section>
+
+        <section id="section2">
+            <div class="main_content">
+                <h1 id="content-title">Education Support Bot</h1>
+                <p id="content-para">Our Education Support Bot provides training
+                    and continuous learning resources for your staff, ensuring
+                    they stay up-to-date with the latest techniques and
+                    trends.</p>
+                <h2 id="content-subtitle">Empower Your Team with Knowledge</h2>
+            </div>
+        </section>
+
+        <section id="section3">
+            <div class="main_content">
+                <h1 id="content-title">Customer Service Bot</h1>
+                <p id="content-para">The Customer Service Bot helps manage
+                    client inquiries and bookings, providing a seamless
+                    experience for both your team and clients.</p>
+                <h2 id="content-subtitle">Enhance Client Interaction</h2>
+            </div>
+        </section>
+
+        <section id="section4">
+            <div class="main_content">
+                <h1 id="content-title">Retailer Bot Assistant</h1>
+                <p id="content-para">The Retailer Bot Assistant streamlines your
+                    inventory and retail operations, allowing you to focus on
+                    providing exceptional services.</p>
+                <h2 id="content-subtitle">Optimize Your Retail Management</h2>
+            </div>
+        </section>
+
+        <section id="section5">
+            <div class="main_content">
+                <h1 id="content-title">Booking Bot</h1>
+                <p id="content-para">The Booking Bot automates your appointment
+                    scheduling, reducing administrative work and improving
+                    customer convenience.</p>
+                <h2 id="content-subtitle">Simplify Scheduling</h2>
+            </div>
+        </section>
+
+        <section id="section6">
+            <div class="main_content">
+                <h1 id="content-title">Custom Bots</h1>
+                <p id="content-para">We also offer custom bots tailored to your
+                    salon's specific needs, helping you tackle unique challenges
+                    and enhance your services.</p>
+                <h2 id="content-subtitle">Tailor-Made Solutions for Your
+                    Salon</h2>
+            </div>
+        </section>
 
         <script>
-            var header = document.getElementsByClassName("header")[0];
-            header.style.padding = "10px 50px";
+    document.querySelectorAll('ul li').forEach(item => {
+        item.addEventListener('click', () => {
+            // Hide all sections
+            document.querySelectorAll('section').forEach(section => section.classList.remove('active'));
+            
+            // Show the selected section
+            document.querySelector(`#section${item.id.replace('item', '')}`).classList.add('active');
 
-            var head = document.getElementsByTagName("head")[0];  
-            var styletag = document.createElement("style");  
-            head.appendChild(styletag);
+            // Scroll to the section
+            document.querySelector(`#section${item.id.replace('item', '')}`).scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+</script>
 
-            styletag.innerHTML = `
-                * {
-                    padding: 0;
-                    margin: 0;
-                }
-            `;
-
-            var logo = document.getElementsByClassName("logo")[0];  
-            var logoimg = document.createElement("img");  
-            logoimg.src = "https://www.chainwizz.com/wp-content/uploads/2024/05/chainwizzlogo.png";  
-            logoimg.alt = "Logo";  
-            logoimg.style.width = "200px";  
-            logoimg.style.height = "90px";  
-
-            var ancher = document.createElement("a");  
-            ancher.href = "https://yourwebsite.com";  
-            ancher.appendChild(logoimg);  
-
-            logo.appendChild(ancher);  
-
-            // Array of menu items with name and link
-            var item = [
-                {name: "Home", link: "https://yourwebsite.com/home"},
-                {name: "About", link: "https://yourwebsite.com/about"},
-                {name: "Services", link: "https://yourwebsite.com/services"},
-                {name: "Contact", link: "https://yourwebsite.com/contact"}
-            ];
-
-            var menu = document.getElementsByClassName("menu_item")[0]; 
-
-            // Loop through each item in the array
-            for (var i = 0; i < item.length; i++) {
-                var menu_item = document.createElement("a");  
-                menu_item.href = item[i].link;  
-                menu_item.textContent = item[i].name;  
-
-                // Apply some styling
-                menu_item.style.color = "black";
-                menu_item.style.textDecoration = "none";
-                menu_item.style.padding = "10px";
-                menu_item.style.margin = "0px";
-                menu_item.style.display = "inline-block";
-
-                // Append the newly created <a> element to the menu container
-                menu.appendChild(menu_item);
-            }
-
-            // Log the menu to see the updated structure
-            console.log(menu);
-
-
-
-
-            var flx = document.getElementsByClassName("inner-header")[0]; // Select the first element with class "inner-header"
-            flx.style.display = "flex"; // Set the display property to "flex"
-            flx.style.justifyContent = "space-between"; // Set justify-content to space-between
-            flx.style.alignItems = "center";
-
-        </script>
     </body>
 </html>
